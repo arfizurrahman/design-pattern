@@ -1,25 +1,28 @@
 package com.codewithmosh;
 
-import com.codewithmosh.command.History;
-import com.codewithmosh.command.SetContrastCommand;
-import com.codewithmosh.command.SetTextCommand;
-import com.codewithmosh.command.VideoEditor;
-import com.codewithmosh.template.StoreDataWindow;
+import com.codewithmosh.observer.StatusBar;
+import com.codewithmosh.observer.Stock;
+import com.codewithmosh.observer.StockListView;
 
 public class Main {
     public static void main(String[] args) {
-        var videoEditor = new VideoEditor();
-        var history = new History();
+        var statusBar = new StatusBar();
+        var stockListView = new StockListView();
 
-        var setTextCommand = new SetTextCommand("Video Title",history,videoEditor);
-        setTextCommand.execute();
+        var stock1 = new Stock("stock1", 1000);
+        var stock2 = new Stock("stock2", 2000);
+        var stock3 = new Stock("stock3", 3000);
 
-        var setContrastCommand = new SetContrastCommand(10.5f, history, videoEditor);
-        setContrastCommand.execute();
-        System.out.println(videoEditor);
+        statusBar.addStock(stock1);
+        statusBar.addStock(stock2);
 
-        setTextCommand.undo();
-        setContrastCommand.undo();
-        System.out.println(videoEditor);
+        stockListView.addStock(stock1);
+        stockListView.addStock(stock2);
+        stockListView.addStock(stock3);
+        statusBar.show();
+        stockListView.show();
+
+        stock1.setPrice(100);
+        statusBar.show();
     }
 }
