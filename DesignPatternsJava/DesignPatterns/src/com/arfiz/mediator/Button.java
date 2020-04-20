@@ -1,6 +1,6 @@
-package com.codewithmosh.mediator;
+package com.arfiz.mediator;
 
-public class Button extends UIControl {
+public class Button extends UIControl{
     private boolean isEnabled;
 
     public boolean isEnabled() {

@@ -1,6 +1,6 @@
-package com.codewithmosh.mediator;
+package com.arfiz.mediator;
 
-public class TextBox extends UIControl {
+public class TextBox extends UIControl{
     private String content;
 
     public String getContent() {

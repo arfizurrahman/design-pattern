@@ -1,4 +1,4 @@
-package com.codewithmosh.mediator;
+package com.arfiz.mediator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,12 @@ import java.util.List;
 public abstract class UIControl {
     private List<EventHandler> eventHandlers = new ArrayList<>();
 
-    public void attach(EventHandler handler){
-        eventHandlers.add(handler);
+    public void addEventHandler(EventHandler observer){
+        eventHandlers.add(observer);
     }
 
     protected void notifyEventHandlers(){
-        for(var handler : eventHandlers)
-            handler.handle();
+        for(var observer: eventHandlers)
+            observer.handle();
     }
 }
