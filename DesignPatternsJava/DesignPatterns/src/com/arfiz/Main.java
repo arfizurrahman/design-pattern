@@ -1,12 +1,17 @@
 package com.arfiz;
 
-import com.arfiz.visitor.*;
+import com.arfiz.SOLIDDesignPriciple.singleResponsibilityPriciple.Journal;
+import com.arfiz.SOLIDDesignPriciple.singleResponsibilityPriciple.Persistence;
 
 public class Main {
     public static void main(String[] args) {
-        var document = new HtmlDocument();
-        document.add(new HeadingNode());
-        document.add(new AnchorNode());
-        document.execute(new PlainTextOperation());
+        var j = new Journal();
+        j.addEntry("I cried today");
+        j.addEntry("I ate a bug");
+        System.out.println(j);
+
+        var p = new Persistence();
+        var fileName = "journal.txt";
+        p.saveToFile(j, fileName, true);
     }
 }
