@@ -1,13 +1,14 @@
 package com.arfiz;
 
-import com.arfiz.mediator.ArticlesDialogBox;
-import com.arfiz.observer.Chart;
-import com.arfiz.observer.DataSource;
-import com.arfiz.observer.SpreadSheet;
+import com.arfiz.chainOfResponsibility.*;
 
 public class Main {
     public static void main(String[] args) {
-        var dialogBox = new ArticlesDialogBox();
-        dialogBox.simulateUserInteraction();
+        var compressor = new Compressor(null);
+        var logger = new Logger(compressor);
+        var authenticator = new Authenticator(logger);
+
+        var server = new WebServer(authenticator);
+        server.handle(new HttpRequest("admi", "1234"));
     }
 }
