@@ -17,18 +17,8 @@ public class WavFile {
         return wavFile;
     }
 
-    public void reduceNoise() {
+    public void apply(AudioFilter audioFilter) {
         for (var segment : segments)
-            segment.reduceNoise();
-    }
-
-    public void addReverb() {
-        for (var segment : segments)
-            segment.addReverb();
-    }
-
-    public void normalize() {
-        for (var segment : segments)
-            segment.normalize();
+            segment.applyFilter(audioFilter);
     }
 }

@@ -1,4 +1,8 @@
 package com.codewithmosh.visitor;
 
-public class FactSegment extends Segment {
+public class FactSegment implements Segment {
+    @Override
+    public void applyFilter(AudioFilter audioFilter) {
+        audioFilter.apply(this);
+    }
 }

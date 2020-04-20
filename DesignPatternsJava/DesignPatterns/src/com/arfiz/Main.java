@@ -1,14 +1,12 @@
 package com.arfiz;
 
-import com.arfiz.chainOfResponsibility.*;
+import com.arfiz.visitor.*;
 
 public class Main {
     public static void main(String[] args) {
-        var compressor = new Compressor(null);
-        var logger = new Logger(compressor);
-        var authenticator = new Authenticator(logger);
-
-        var server = new WebServer(authenticator);
-        server.handle(new HttpRequest("admi", "1234"));
+        var document = new HtmlDocument();
+        document.add(new HeadingNode());
+        document.add(new AnchorNode());
+        document.execute(new PlainTextOperation());
     }
 }
