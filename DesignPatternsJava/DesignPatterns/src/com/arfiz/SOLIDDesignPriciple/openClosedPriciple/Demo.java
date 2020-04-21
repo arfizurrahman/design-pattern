@@ -1,11 +1,9 @@
-package com.arfiz;
-
-import com.arfiz.SOLIDDesignPriciple.openClosedPriciple.*;
+package com.arfiz.SOLIDDesignPriciple.openClosedPriciple;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Demo {
     public static void main(String[] args) {
         var apple = new Product("Apple", Color.GREEN, Size.SMALL);
         var tree = new Product("Tree", Color.GREEN, Size.LARGE);
