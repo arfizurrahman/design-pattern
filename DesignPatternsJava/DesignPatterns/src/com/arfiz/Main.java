@@ -1,19 +1,97 @@
 package com.arfiz;
 
-import com.arfiz.SOLIDDesignPriciple.dependencyInversionPriciple.excerciseTwo.*;
-import com.arfiz.SOLIDDesignPriciple.liskovSubstitutionPrinciple.Rectangle;
-import com.arfiz.SOLIDDesignPriciple.liskovSubstitutionPrinciple.Square;
-import com.arfiz.SOLIDDesignPriciple.openClosedPriciple.*;
+import com.arfiz.interpreter.BinaryOperation;
+import com.arfiz.interpreter.IElement;
+import com.arfiz.interpreter.Int;
+import com.arfiz.interpreter.Token;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        var empManager = new EmployeeManager();
-        empManager.addEmployee(new Employee("Arfiz", Gender.MALE, Position.MANAGER));
-        empManager.addEmployee(new Employee("Farhana", Gender.FEMALE, Position.MANAGER));
-        var stats = new EmployeeStatistics(empManager);
-        System.out.println("Number of male managers in our company is: " + stats.countMaleManagers());
+        String input = "(13+4)-(12+1)";
+        var tokens = Lex(input);
+        System.out.println(tokens.toString());
+        var parse = parse(tokens);
+        System.out.println(input +" = "+ parse.getValue());
+    }
+
+    static List<Token> Lex(String input) {
+        var array = input.toCharArray();
+        List<Token> result = new ArrayList<>();
+        for (int i = 0; i < input.length(); i++) {
+            switch (array[i]){
+                case '+':
+                    result.add(new Token(Token.Type.PLUS, "+"));
+                    break;
+                case '-':
+                    result.add(new Token(Token.Type.MINUS, "-"));
+                    break;
+                case '(':
+                    result.add(new Token(Token.Type.LPAREN, "("));
+                    break;
+                case ')':
+                    result.add(new Token(Token.Type.RPAREN, ")"));
+                    break;
+                default:
+                    var sb = new StringBuilder(Character.toString(array[i]));
+                    for (int j = i + 1; j < array.length; ++j){
+                        if (Character.isDigit(array[j])){
+                            sb.append(array[j]);
+                            ++i;
+                        } else {
+                            result.add(new Token(Token.Type.INTEGER, sb.toString()));
+                            break;
+                        }
+                    }
+                    break;
+            }
+        }
+        return result;
+    }
+
+    static IElement parse(List<Token> tokens) {
+        var result = new BinaryOperation();
+        boolean haveLHS = false;
+        for (int i = 0; i < tokens.size(); i++){
+            var token = tokens.get(i);
+            switch (token.type) {
+                case INTEGER:
+                    var integer = new Int(Integer.parseInt(token.text));
+                    if (!haveLHS){
+                        result.left = integer;
+                        haveLHS = true;
+                    }else {
+                        result.right = integer;
+                    }
+                    break;
+                case PLUS:
+                    result.type = BinaryOperation.Type.ADDITION;
+                    break;
+                case MINUS:
+                    result.type = BinaryOperation.Type.SUBTRACTION;
+                    break;
+                case LPAREN:
+                    int j = i;
+                    for (; j < tokens.size(); ++j)
+                        if (tokens.get(j).type == Token.Type.RPAREN)
+                            break;
+                    var subexpression = tokens.stream().skip(i + 1).limit(j - i -1).collect(Collectors.toList());
+                    var element = parse(subexpression);
+                    if (!haveLHS){
+                        result.left = element;
+                        haveLHS = true;
+                    }else {
+                        result.right = element;
+                    }
+                    i=j;
+                    break;
+                default:
+                    throw new IllegalArgumentException();
+            }
+        }
+      return result;
     }
 }
