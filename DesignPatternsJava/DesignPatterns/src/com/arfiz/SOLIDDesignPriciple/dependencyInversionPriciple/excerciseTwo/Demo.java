@@ -1,14 +1,6 @@
-package com.arfiz;
+package com.arfiz.SOLIDDesignPriciple.dependencyInversionPriciple.excerciseTwo;
 
-import com.arfiz.SOLIDDesignPriciple.dependencyInversionPriciple.excerciseTwo.*;
-import com.arfiz.SOLIDDesignPriciple.liskovSubstitutionPrinciple.Rectangle;
-import com.arfiz.SOLIDDesignPriciple.liskovSubstitutionPrinciple.Square;
-import com.arfiz.SOLIDDesignPriciple.openClosedPriciple.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Main {
+public class Demo {
     public static void main(String[] args) {
         var empManager = new EmployeeManager();
         empManager.addEmployee(new Employee("Arfiz", Gender.MALE, Position.MANAGER));
