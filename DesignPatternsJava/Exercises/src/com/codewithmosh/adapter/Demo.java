@@ -1,9 +1,6 @@
-package com.codewithmosh;
+package com.codewithmosh.adapter;
 
-import com.codewithmosh.adapter.EmailClient;
-import com.codewithmosh.adapter.GmailAdapter;
-
-public class Main {
+public class Demo {
     public static void main(String[] args) {
         var client = new EmailClient();
         client.addProvider(new GmailAdapter());
