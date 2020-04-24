@@ -1,12 +1,10 @@
 package com.codewithmosh;
 
-import com.codewithmosh.adapter.EmailClient;
-import com.codewithmosh.adapter.GmailAdapter;
+import com.codewithmosh.facade.TwitterAPI;
 
 public class Main {
     public static void main(String[] args) {
-        var client = new EmailClient();
-        client.addProvider(new GmailAdapter());
-        client.downloadEmails();
+        var api = new TwitterAPI("apiKey", "secret");
+        api.getRecentTweets();
     }
 }
