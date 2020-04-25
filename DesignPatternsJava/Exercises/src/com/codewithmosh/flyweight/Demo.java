@@ -1,10 +1,7 @@
-package com.codewithmosh;
+package com.codewithmosh.flyweight;
 
-import com.codewithmosh.flyweight.CellContextFactory;
-import com.codewithmosh.flyweight.SpreadSheet;
-
-public class Main {
-    public static void main(String[] args) {
+public class Demo {
+    public static void show() {
         var contextFactory = new CellContextFactory();
         var sheet = new SpreadSheet(contextFactory);
         sheet.setContent(0, 0, "Hello");
