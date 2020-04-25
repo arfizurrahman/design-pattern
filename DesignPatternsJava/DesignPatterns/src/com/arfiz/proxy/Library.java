@@ -1,0 +1,16 @@
+package com.arfiz.proxy;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Library {
+    private Map<String, Ebook> ebooks = new HashMap<>();
+
+    public void add(Ebook ebook){
+        ebooks.put(ebook.getFileName(), ebook);
+    }
+
+    public void openEBook(String fileName) {
+        ebooks.get(fileName).show();
+    }
+}
