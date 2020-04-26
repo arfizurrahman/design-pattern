@@ -1,0 +1,13 @@
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\bin\Debug\netcoreapp3.1\Factory.exe
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\bin\Debug\netcoreapp3.1\Factory.deps.json
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\bin\Debug\netcoreapp3.1\Factory.runtimeconfig.json
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\bin\Debug\netcoreapp3.1\Factory.runtimeconfig.dev.json
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\bin\Debug\netcoreapp3.1\Factory.dll
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\bin\Debug\netcoreapp3.1\Factory.pdb
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.csprojAssemblyReference.cache
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.csproj.CoreCompileInputs.cache
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.AssemblyInfoInputs.cache
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.AssemblyInfo.cs
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.dll
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.pdb
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\Factory\obj\Debug\netcoreapp3.1\Factory.genruntimeconfig.cache
