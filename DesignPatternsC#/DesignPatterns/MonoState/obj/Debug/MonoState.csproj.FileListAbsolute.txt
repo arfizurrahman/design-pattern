@@ -1,0 +1,6 @@
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\MonoState\bin\Debug\MonoState.exe.config
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\MonoState\bin\Debug\MonoState.exe
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\MonoState\bin\Debug\MonoState.pdb
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\MonoState\obj\Debug\MonoState.csproj.CoreCompileInputs.cache
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\MonoState\obj\Debug\MonoState.exe
+C:\Projects\Design Patterns\DesignPatternsC#\DesignPatterns\MonoState\obj\Debug\MonoState.pdb

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "3muhYAe0eVoWr3n8+/Pi/y0Z0C/hyK8jSOhfSCjSIb5C5IN9xjDC+5B5SRT1j+2qz8l4D4GcRfSATelyspJGWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\Design Patterns\\DesignPatternsC#\\DesignPatterns\\Singleton\\Singleton.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}
